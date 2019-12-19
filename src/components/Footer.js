@@ -26,7 +26,7 @@ const Footer = class extends React.Component {
                   <ul className="menu-list">
                     <li>
                       <Link to="/" className="navbar-item">
-                        Home
+                        Flights
                       </Link>
                     </li>
                     <li>
@@ -36,7 +36,7 @@ const Footer = class extends React.Component {
                     </li>
                     <li>
                       <Link className="navbar-item" to="/products">
-                        Products
+                        Hotels
                       </Link>
                     </li>
                     <li>
