@@ -2,7 +2,7 @@
 templateKey: about-page
 title: Spicejet Privacy Policy
 ---
-We, at SpiceJet, value the relationship we have with our customers and web site visitors, and are committed to responsible information handling practices. We take the privacy of our customers very seriously and want you to feel comfortable whenever you visit our web site.
+We, at  SpiceJet, value the relationship we have with our customers and web site visitors, and are committed to responsible information handling practices. We take the privacy of our customers very seriously and want you to feel comfortable whenever you visit our web site.
 
 **Notice of Information Practices**
 
