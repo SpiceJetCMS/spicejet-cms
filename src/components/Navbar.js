@@ -61,32 +61,29 @@ const Navbar = class extends React.Component {
           >
             <div className="navbar-start has-text-centered">
               <Link className="navbar-item" to="/about">
-                About
+                Flights
               </Link>
               <Link className="navbar-item" to="/products">
-                Products
+                Hotels
               </Link>
               <Link className="navbar-item" to="/blog">
-                Blog
+                Holiday Packages
               </Link>
               <Link className="navbar-item" to="/contact">
-                Contact
+                Add-ons
               </Link>
               <Link className="navbar-item" to="/contact/examples">
-                Form Examples
+                Deals
               </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
+              <Link className="navbar-item" to="/contact/examples">
+                Gift Card
+              </Link>
+              <Link className="navbar-item" to="/contact/examples">
+                SpiceClub
+              </Link>
+              <Link className="navbar-item" to="/contact/examples">
+                More
+              </Link>
             </div>
           </div>
         </div>
