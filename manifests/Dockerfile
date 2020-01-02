@@ -8,6 +8,7 @@ COPY . /app
 COPY manifests/default.conf /app
 RUN yarn install
 RUN npm run build
+RUN ls -la /app/public/
 # EXPOSE 3000
 # CMD [ "npm", "run", "serve" ]
 
@@ -19,5 +20,5 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY --from=0 /app/public/* /usr/share/nginx/html/
 COPY --from=0 /app/default.conf /etc/nginx/conf.d/default.conf
 #CMD ["nginx", "-g", "daemon off;"]
-CMD ["/usr/sbin/nginx"]
+CMD ["servive", "nginx", "restart"]
 
