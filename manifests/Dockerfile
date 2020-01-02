@@ -12,10 +12,10 @@ RUN npm run build
 # CMD [ "npm", "run", "serve" ]
 
 
-FROM nginx:1.15
-RUN apt-get -y update && \
-    apt-get -y install net-tools curl vim
-COPY --from=0 /app/public/* /usr/share/nginx/html
-COPY --from=0 /app/default.conf /etc/nginx/conf.d/default.conf
-CMD ["nginx", "-g", "daemon off;"]
+# FROM nginx:1.15
+# RUN apt-get -y update && \
+#     apt-get -y install net-tools curl vim
+# COPY --from=0 /app/public/* /usr/share/nginx/html
+# COPY --from=0 /app/default.conf /etc/nginx/conf.d/default.conf
+# CMD ["nginx", "-g", "daemon off;"]
 
