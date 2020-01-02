@@ -8,10 +8,6 @@ COPY . /app
 COPY manifests/default.conf /app
 RUN yarn install
 RUN npm run build
-RUN ls -la /app/public/
-# EXPOSE 3000
-# CMD [ "npm", "run", "serve" ]
-
 
 FROM nginx:1.15
 RUN apt-get -y update && \
@@ -19,6 +15,7 @@ RUN apt-get -y update && \
 RUN rm -rf /usr/share/nginx/html/*
 COPY --from=0 /app/public/ /usr/share/nginx/html/
 COPY --from=0 /app/default.conf /etc/nginx/conf.d/default.conf
-#CMD ["nginx", "-g", "daemon off;"]
-CMD ["servive", "nginx", "restart"]
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+#CMD ["servive", "nginx", "restart"]
 
