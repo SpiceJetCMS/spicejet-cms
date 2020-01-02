@@ -6,6 +6,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 WORKDIR /app
 COPY . /app
 COPY manifests/default.conf /app
+RUN yarn install
 RUN npm run build
 # EXPOSE 3000
 # CMD [ "npm", "run", "serve" ]
