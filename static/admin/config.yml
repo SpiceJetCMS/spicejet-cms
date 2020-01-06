@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
   branch: master
+  repo: https://github.com/SpiceJetCMS/spicejet-cms
+  base_url: http://10.31.32.247:8080
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
