@@ -3,6 +3,8 @@ backend:
   branch: oAuthChanges
   repo: https://github.com/SpiceJetCMS/spicejet-cms
   base_url: http://testcms.spicejet.com
+  identity_url: "http://testcms.spicejet.com/.netlify/identity"
+  gateway_url:  "http://testcms.spicejet.com/.netlify/git"
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
