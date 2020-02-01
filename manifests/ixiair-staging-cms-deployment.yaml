@@ -1,0 +1,70 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ixicms
+  namespace: ixicms
+spec:
+  replicas: 1
+  minReadySeconds: 30
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        version: v1
+        app: ixiair4
+    spec:
+      terminationGracePeriodSeconds: 30
+      restartPolicy: Always
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kops.k8s.io/instancegroup
+                operator: In
+                values:
+                - nodes
+      containers:
+      - name: ixiair4
+        image: 303179303153.dkr.ecr.ap-south-1.amazonaws.com/spicejet:1.0.20.SGCMS
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: "1000m"
+            memory: "2048M"
+          requests:
+            cpu: "300m"
+            memory: "1200M"
+        ports:
+        - containerPort: 8080
+        env:
+        - name: NODE_ENV
+          value: production
+        volumeMounts:
+        - name: log-volume
+          mountPath: /app/logs
+      volumes:
+        - name: log-volume
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ixicms-service
+  namespace: ixicms
+  labels:
+    app: ixicms
+spec:
+  ports:
+  - port: 80
+    name: http
+    targetPort: 80
+  selector:
+    app: ixicms
+    version: v1
+  type: LoadBalancer
