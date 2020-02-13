@@ -3,8 +3,8 @@ backend:
   branch: oAuthChanges
   repo: https://github.com/SpiceJetCMS/spicejet-cms
   base_url: http://ae1cbf946457011ea9223027447e1dbc-231735952.ap-south-1.elb.amazonaws.com
-  identity_url: "http://ae1cbf946457011ea9223027447e1dbc-231735952.ap-south-1.elb.amazonaws.com/.netlify/identity"
-  gateway_url:  "http://ae1cbf946457011ea9223027447e1dbc-231735952.ap-south-1.elb.amazonaws.com/.netlify/git"
+#   identity_url: "http://ae1cbf946457011ea9223027447e1dbc-231735952.ap-south-1.elb.amazonaws.com/.netlify/identity"
+#   gateway_url:  "http://ae1cbf946457011ea9223027447e1dbc-231735952.ap-south-1.elb.amazonaws.com/.netlify/git"
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
